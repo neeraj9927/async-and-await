@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        async function sharma() {
+            let sambhal = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve('20deg');
+                }, 2000);
+            });
+            console.log('fetching Sambhal weather please wait ...');
+
+            let fetchedSambhalWeather = await sambhal;
+
+            console.log('fatech sambhal weather' + fetchedSambhalWeather);
+
+
+            return [fetchedSambhalWeather];
+        }
+
+        async function love() {
+            let chandaushi = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve('25deg');
+                }, 2000);
+            });
+            console.log('fetching chandaushi weather please wait ...');
+
+            let fatchChandaushiWeether = await chandaushi;
+
+            console.log('fatched chandaushi weather' + fatchChandaushiWeether);
+
+            return [fatchChandaushiWeether];
+        }
+
+        const result = async () => {
+            let a = await sharma();
+            let b = await love();
+        }
+        result();
+    </script>
+</body>
+
+</html>

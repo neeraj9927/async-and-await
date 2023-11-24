@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>please check console</h1>
+    <script>
+    async function neeraj(){
+        let DelhiWether = new Promise((resolve,reject) =>{
+            setTimeout(() => {
+                resolve('20 deg');
+            }, 2000);
+        });
+        // let HeadrabadWether = new Promise((resolve,reject) =>{
+        //     setTimeout(() => {
+        //         resolve('25 deg');
+        //     }, 2000);
+        // });
+
+        // DelhiWether.then(alert);
+        // HeadrabadWether.then(alert);
+        console.log('fetching delhi weather please wait ...');
+        let delhiw = await DelhiWether;
+        console.log('fetchd delhi weather' + delhiw);
+        // console.log('fetching HeadrabadWether please wait ...');
+        // let hedrabad = await HeadrabadWether;
+        // console.log('fetchd HeadrabadWether' + hedrabad);
+
+        return[delhiw]  //,hedrabad
+    }
+    async function neerajone(){
+        let DelhiWether = new Promise((resolve,reject) =>{
+            setTimeout(() => {
+                resolve('20 deg');
+            }, 1000);
+        })
+        let HeadrabadWether = new Promise((resolve,reject) =>{
+            setTimeout(() => {
+                resolve('25 deg');
+            }, 1000);
+        })
+
+        // DelhiWether.then(alert);
+        // HeadrabadWether.then(alert);
+        console.log('fetching data weather please wait ...');
+        let delhiw = await DelhiWether;
+        console.log('fetchd delhi weather' + delhiw);
+        console.log('fetching HeadrabadWether please wait ...');
+        let hedrabad = await HeadrabadWether;
+        console.log('fetchd HeadrabadWether' + hedrabad);
+
+        return[delhiw,hedrabad]
+    }
+
+         
+        const allresult = async () => {
+            let a = await neeraj(); 
+            let e = await neerajone();          
+
+        }
+
+        allresult();
+    </script>
+</body>
+</html>
